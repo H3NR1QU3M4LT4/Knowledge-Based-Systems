@@ -1,0 +1,54 @@
+:-[satisfy,induce_ifthen,refeicaoAconselhamento2].
+
+% the goal is to classify refeicaoAconselhamento
+learn_rules:-
+	learn(no),  % negative examples
+	learn(yes), % positive examples
+        % save new rules:
+	tell('refeicao_if_then.pl'),
+	listing(<==),
+	told.
+
+
+
+q1(Class):- classify([idade=menor18, regiao=norte, preco=menor10],Class).
+
+
+q2(Class,Tipo,Idade,Regiao,Preco):- classify([tipo=Tipo, idade=Idade, regiao=Regiao, preco=Preco],Class).
+q3(Class):- classify([idade=de18a50, regiao=norte, preco=menor10],Class).
+
+q4(Class):- classify([idade=menor18, regiao=norte, preco=maior10],Class).
+q5(Class):- classify([idade=menor18, regiao=centro, preco=maior10],Class).
+q6(Class):- classify([idade=de18a50, regiao=centro, preco=maior10],Class).
+
+q7(Class):- classify([idade=mais51, regiao=centro, preco=menor10],Class).
+q8(Class):- classify([idade=mais51, regiao=centro, preco=maior10],Class).
+q9(Class):- classify([idade=mais51, regiao=norte, preco=maior10],Class).
+
+q10(Class):- classify([idade=mais51, regiao=norte, preco=menor10],Class).
+q11(Class):- classify([idade=menor18, regiao=sul, preco=maior10],Class).
+q12(Class):- classify([idade=de18a50, regiao=sul, preco=menor10],Class).
+
+q13(Class):- classify([idade=de18a50, regiao=sul, preco=maior10],Class).
+q14(Class):- classify([idade=mais51, regiao=sul, preco=maior10],Class).
+q15(Class):- classify([idade=mais51, regiao=sul, preco=menor10],Class).
+
+%faltam 3 combinacoes (pensar na forma como colocar aquilo do fastfood)
+
+
+
+q16(Class):- classify([idade=de18a50, regiao=sul, preco=maior10],Class).
+q17(Class):- classify([idade=de18a50, regiao=sul, preco=menor10],Class).
+q18(Class):- classify([idade=menor18, regiao=centro, preco=menor10],Class).
+q19(Class):- classify([idade=menor18, regiao=centro, preco=maior10],Class).
+q20(Class):- classify([idade=de18a50, regiao=centro, preco=maior10],Class).
+q21(Class):- classify([idade=de18a50, regiao=norte, preco=menor10],Class).
+q22(Class):- classify([idade=de18a50, regiao=sul, preco=maior10],Class).
+
+
+
+
+
+
+
+

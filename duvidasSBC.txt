@@ -1,0 +1,5 @@
+onde somar o min;
+
+estado inicial do restaurante;
+
+Como perguntar somar o lucro só no primeiro e ultimo elemento da lista;
